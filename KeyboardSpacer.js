@@ -8,10 +8,10 @@ import {
   LayoutAnimation,
   View,
   Dimensions,
-  ViewPropTypes,
   Platform,
   StyleSheet
 } from 'react-native';
+import { ViewPropTypes } from 'deprecated-react-native-prop-types'
 
 const styles = StyleSheet.create({
   container: {
@@ -63,7 +63,7 @@ export default class KeyboardSpacer extends Component {
     const resetListener = Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide';
     this._listeners = [
       Keyboard.addListener(updateListener, this.updateKeyboardSpace),
-      Keyboard.addListener(resetListener, this.resetKeyboardSpace)
+      Keyboard.addListener(resetListener, this.resetKeyboardSpace),
     ];
   }
 
